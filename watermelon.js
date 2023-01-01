@@ -6,29 +6,32 @@ export function Watermelon(props) {
     const palette = document.createElement('div');
     const logo = document.createElement('a');
     
+    function createColor() {
+        const color = document.createElement('div');
+
+        MESOCARP['background-color'] = colorGen();
+        MESOCARP['width'] = `${100/OPTIONS.colors}%`;
+
+        color.setAttribute('class', 'mesocarp');
+        color.setAttribute('style', toStyle(MESOCARP));
+
+        return color;
+    }
+
     // Render the palette
     const paletteGen = () => {
+        // Remove existing palette color containers
         const paletteExist = document.querySelectorAll('.mesocarp');
         if (paletteExist.length > 0) 
             for (let element of paletteExist)
                 element.remove();
         
-
-        //if (isExocarpExist) isExocarpExist.remove();
-        
-        console.log('ran paletteGen');
         palette.setAttribute('id', 'exocarp');
         palette.setAttribute('style', toStyle(EXOCARP));
-
+        
         for (let i = 0; i < OPTIONS.colors; i++) {
-            const colors = document.createElement('div');
-            const cg = colorGen();
-            MESOCARP['background-color'] = cg;
-            MESOCARP['width'] = `${100/OPTIONS.colors}%`;
-            colors.setAttribute('class', 'mesocarp');
-            colors.setAttribute('style', toStyle(MESOCARP));
-
-            palette.prepend(colors);
+            const newColor = createColor();
+            palette.prepend(newColor);
         }
     }
 

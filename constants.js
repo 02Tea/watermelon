@@ -1,3 +1,6 @@
+const GLOBAL = {
+    'font-family': 'monospace' 
+}
 const OPTIONS = {
 	colors: 6,
 	threshold: 255
@@ -6,7 +9,7 @@ const OPTIONS = {
 const EXOCARP = {
 	position    : 'absolute',
 	width       : '100%',
-	height      : '5%',
+	height      : '100%',
     bottom: 0,
 	'z-index'   : 99995
 }
@@ -17,28 +20,55 @@ const MESOCARP = {
 	'margin-bottom' : '-5px',
 	height          : '100%',
 	width           : `${OPTIONS.size}%`,
-	transition      : 'all .3s ease'	
+	transition      : 'all .3s ease',
+    cursor: 'crosshair',
 }
 
-const LOGO = {
+const HEXCSS = {
+    background: 'rgba(0, 0, 0, 0.8)',
+    color: '#fff',
+    position: 'absolute',
+    padding: '5px',
+    'z-index': '99996',
+    'font-weight': 'bold',
+    'font-size': '16px',
+};
+
+const HOTKEYS = {
     background: 'rgba(0, 0, 0, 0.9)',
     color: '#fff',
     position: 'absolute',
-    transform: 'translateY(-50%)',
-    top: '50%',
+    bottom: '20px',
+    'z-index': '99999',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    padding: '5px',
+    cursor: 'crosshair',
+    'font-weight': 'bold',
+    'font-size': '16px',
+    ...GLOBAL
+}
+
+const BOOKMARK = {
+    background: 'rgba(0, 0, 0, 0.9)',
+    color: '#fff',
+    position: 'absolute',
+    top: '10px',
     left: '10px',
     'z-index': '99999',
     'text-decoration': 'none',
     padding: '5px',
-    cursor: 'move',
+    cursor: 'grab',
     'font-weight': 'bold',
     'font-size': '16px',
-    'font-family': 'Courier, Arial'
-};
+    ...GLOBAL
+}
 
 export {
     OPTIONS,
     EXOCARP,
     MESOCARP,
-    LOGO 
+    HEXCSS,
+    HOTKEYS,
+    BOOKMARK
 }

@@ -1,4 +1,4 @@
-import { OPTIONS } from './constants'
+import { OPTIONS, MESOCARP } from './constants'
 
 const toStyle = (obj) => {
 	let _html = '';
@@ -19,7 +19,34 @@ const colorGen = () => {
 	return `rgb(${r}, ${g}, ${b})`;
 }
 
+const createColor = () => {
+    const color = document.createElement('div');
+
+    MESOCARP['background-color'] = colorGen();
+    MESOCARP['width'] = `${100/OPTIONS.colors}%`;
+
+    color.setAttribute('class', 'mesocarp');
+    color.setAttribute('style', toStyle(MESOCARP));
+
+    return color;
+}
+
+const rgbToHex = (r, g, b) => {
+    const rgb = b | (g << 8) | (r << 16);
+
+    return `#${(0x1000000 + rgb).toString(16).slice(1)}`;
+};
+
+const rgbToArray = (rgb) => {
+    return rgb.substring(4, rgb.length-1)
+                .replace(/ /g, '')
+                .split(',');
+};
+
 export {
     toStyle,
-    colorGen
+    colorGen,
+    createColor,
+    rgbToHex,
+    rgbToArray
 }

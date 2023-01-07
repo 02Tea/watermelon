@@ -25,13 +25,16 @@ const MESOCARP = {
 }
 
 const HEXCSS = {
-    background: 'rgba(0, 0, 0, 0.8)',
+    background: 'rgba(0, 0, 0, 1)',
     color: '#fff',
     position: 'absolute',
     padding: '5px',
+    top: 0,
+    left: 0,
     'z-index': '99996',
     'font-weight': 'bold',
     'font-size': '16px',
+    ...GLOBAL
 };
 
 const HOTKEYS = {

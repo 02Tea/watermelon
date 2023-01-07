@@ -1,7 +1,8 @@
 <div align="center">
-  <h1>🍉 watermelon</h1>
+  <h1>🍉 Watermelon</h1>
   <p>
-    <img align="center" alt="Watermelon demo" src="https://github.com/02Tea/watermelon/watermelon.gif" />
+    <img align="center" alt="Watermelon demo" src="[https://github.com/02Tea/watermelon/watermelon.gif](https://github.com/02Tea/watermelon/raw/master/watermelon.gif)" />
+    
   </p>
 </div>
 

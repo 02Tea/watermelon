@@ -1,15 +1,5 @@
 import { OPTIONS, MESOCARP } from './constants'
 
-const toStyle = (obj) => {
-	let _html = '';
-	for( var key in obj ){
-		if( obj.hasOwnProperty( key ) ){
-			_html += `${key}:${obj[key]};`;
-		}
-	}
-	return _html;
-};
-
 const colorGen = () => {
 	const randomColor = (num) => num + (Math.floor(Math.random() * OPTIONS.threshold));
 	const r = randomColor(50);
@@ -26,7 +16,7 @@ const createColor = () => {
     MESOCARP['width'] = `${100/OPTIONS.colors}%`;
 
     color.setAttribute('class', 'mesocarp');
-    color.setAttribute('style', toStyle(MESOCARP));
+    Object.assign(color.style, MESOCARP);
 
     return color;
 }
@@ -44,7 +34,6 @@ const rgbToArray = (rgb) => {
 };
 
 export {
-    toStyle,
     colorGen,
     createColor,
     rgbToHex,

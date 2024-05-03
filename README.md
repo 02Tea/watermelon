@@ -10,3 +10,5 @@ javascript:(function(){const r=document.createElement("link").relList;if(r&&r.su
 
 ![gif demo](/watermelon.gif)
 
+![Alt](https://repobeats.axiom.co/api/embed/43ffc7dbfafb0a2b4c99e9d238c037d62a4251db.svg "Repobeats analytics image")
+
